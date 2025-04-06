@@ -16,7 +16,7 @@ function TaskPage () {
                         className="absolute left-0 top-0 bottom-0 text-slate-100">
                         <ChevronLeftIcon />
                     </button>
-                    <Title>Detalhes da Tarefa</Title>
+                    <Title>Detalhes da Tarefa 12</Title>
                 </div>
             
 
