@@ -14,20 +14,20 @@ function App() {
 }, [tasks]);
 
 useEffect(() => {
-  //    const fetchTasks = async () => {
-  //    //Chamar a API
-  //    const response = await fetch(
-  //     'https://jsonplaceholder.typicode.com/todos?_limit=10',
-  //   {
-  //    method: "GET",
-  //   }
-  // );
-  //   //Pegar os dados que ela retorna
-  //   const data = await response.json();
-  //   //Armazenar/Persistir esses dados no state
-  //   setTasks(data);
-  // };
-  // //Se quiser você pode chamar uma api para pegar as tarefas
+     const fetchTasks = async () => {
+     //Chamar a API
+     const response = await fetch(
+      'https://jsonplaceholder.typicode.com/todos?_limit=10',
+    {
+     method: "GET",
+    }
+  );
+    //Pegar os dados que ela retorna
+    const data = await response.json();
+    //Armazenar/Persistir esses dados no state
+    setTasks(data);
+  };
+  //Se quiser você pode chamar uma api para pegar as tarefas
   // // fetchTasks();
 }, []);
 
@@ -35,7 +35,7 @@ useEffect(() => {
     const newTasks = tasks.map((task) => {
       // PRECISO ATUALIZAR ESSA TAREFA
       if (task.id === taskId) {
-        return { ...task, isCompleted: !task.isCompleted} ;
+        return { ...task, isCompleted: !task.isCompleted};
       }
 
       // Não atualizar a tarefa
@@ -62,8 +62,7 @@ useEffect(() => {
 
   return (
     <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
-      <div className="w-[500px] space-y-4">
-         
+      <div className="w-[500px] space-y-4">    
          <Title> Gerenciador de Tarefas </Title>
          <AddTask onAddTaskSubmit={onAddTaskSubmit}/> 
          <Tasks 
